@@ -1,2 +1,3 @@
-# devops-journey
-This repository is for learning DevOps engineering essentials.
+# My Devops Journey
+Tracking my progress from zero to junior Devops engineer.
+Week 1: Linux, Bash scripting, file permissions, process management. Done.
