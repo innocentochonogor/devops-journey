@@ -2,6 +2,9 @@ name: My First CI Pipeline
 on:
   push:
     branches:
+      - main  
+  pull_request:
+    branches:
       - main
 
 jobs:
@@ -19,3 +22,18 @@ jobs:
 
       - name: List repo files
         run: ls -la
+
+  check-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check if network_check.sh exists
+        run: |
+          if [ -f "scripts/network_check.sh" ]; then
+            echo "network_check.sh found"
+          else
+            echo "network_check.sh missing"
+            exit 1
+          fi
