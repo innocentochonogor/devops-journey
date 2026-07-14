@@ -10,7 +10,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Say hello
+        run: echo "Hello from GitHub actions! This pipeline ran automatically."
+
       - name: Show current date
-      - run: date
+        run: date
+
       - name: List repo files
         run: ls -la
